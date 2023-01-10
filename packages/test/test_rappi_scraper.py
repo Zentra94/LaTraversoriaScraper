@@ -17,9 +17,11 @@ class TestRappiScrapper(unittest.TestCase):
         limit = 3
         rappi_parser = RappiParser()
         restaurants_urls = rappi_parser.get_restaurants_urls(category="Hamburguesas")
-        restaurants_results = rappi_parser.get_restaurants_results(restaurants_urls=restaurants_urls,
-                                                                   limit=limit)
-        self.assertEqual(len(restaurants_results)-1<=limit, True)
+        restaurants_results = rappi_parser.get_restaurants_results(
+            restaurants_urls=restaurants_urls,
+            limit=limit)
+        self.assertEqual(len(restaurants_results) - 1 <= limit, True)
+
 
 if __name__ == '__main__':
     unittest.main()
